@@ -1,6 +1,6 @@
 {
   "name": "react-query-meter",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A query result visual meter.",
   "author": "NadavShaar",
   "license": "",
@@ -11,6 +11,7 @@
   "engines": {
     "node": ">=10"
   },
+  "homepage": "https://nadavshaar.github.io/react-query-meter/",
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
