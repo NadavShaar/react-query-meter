@@ -22,7 +22,7 @@ class QueryMeter extends Component {
         display: "inline-flex",
         flexDirection: "column",
         position: "relative",
-        background: props.containerBackgroundColor,
+        background: props.backgroundColor,
         borderRadius: `${props.width * 2}px ${props.width * 2}px 0 0`,
         minHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${props.width / 2}px`,
         maxHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${props.width / 2}px`
@@ -62,7 +62,7 @@ class QueryMeter extends Component {
         position: "absolute",
         bottom: 0,
         left: "50%",
-        background: props.coverBackgroundColor,
+        background: props.backgroundColor,
         borderRadius: `${props.width * 2}px ${props.width * 2}px 0 0`,
         width: props.width - props.thickness * 2,
         height: props.width / 2 - props.thickness,
@@ -71,7 +71,7 @@ class QueryMeter extends Component {
       },
       bottomCoverLayer: {
         height: props.containerSpacing,
-        background: props.containerBackgroundColor,
+        background: props.backgroundColor,
         position: "absolute",
         bottom: 0,
         left: 0,
@@ -89,7 +89,7 @@ class QueryMeter extends Component {
         zIndex: 3,
         overflow: "hidden",
         transformOrigin: "100% 50% 0px",
-        background: props.coverBackgroundColor
+        background: props.backgroundColor
       },
       percentage: {
         transform: "rotate(-90deg)",
@@ -156,38 +156,45 @@ class QueryMeter extends Component {
   }
 
   componentDidMount() {
-    let arrayOfnumbersToAnimate = [];
-    if (this.props.showInfo) {
-      arrayOfnumbersToAnimate.push(
-        {
-          element: this.refs.totalHits,
-          state: "totalHits",
-          previous: 0,
-          current: 0
-        },
-        {
-          element: this.refs.maxHits,
-          state: "maxHits",
-          previous: 0,
-          current: 0
-        }
-      );
-    }
-    if (this.props.showPercentage) {
-      arrayOfnumbersToAnimate.push({
-        element: this.refs.percentage,
-        state: "percentage",
+    let arrayOfnumbersToAnimate = this.getInfoData();
+    arrayOfnumbersToAnimate = arrayOfnumbersToAnimate.concat(this.getPercentageData());
+    this.triggerAnimation(arrayOfnumbersToAnimate);
+  }
+
+  getInfoData() {
+    let infoData = [];
+    infoData.push(
+      {
+        element: this.refs.totalHits,
+        state: "totalHits",
         previous: 0,
         current: 0
-      });
-    }
+      },
+      {
+        element: this.refs.maxHits,
+        state: "maxHits",
+        previous: 0,
+        current: 0
+      }
+    );
+    return infoData;
+  }
 
+  getPercentageData() {
+    let percentageData = [];
+    percentageData.push({
+      element: this.refs.percentage,
+      state: "percentage",
+      previous: 0,
+      current: 0
+    });
+    return percentageData;
+  }
+  
+  triggerAnimation(arrayOfnumbersToAnimate) {
     this.initElementsOfNumbers(arrayOfnumbersToAnimate);
-
-    // setTimeout(() => {
-      this.refresh(this.props);
-      this.animateNumbers(arrayOfnumbersToAnimate);
-    // }, this.props.firstAnimationDelay);
+    this.refresh(this.props);
+    this.animateNumbers(arrayOfnumbersToAnimate);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -207,6 +214,8 @@ class QueryMeter extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
+      if(prevProps.showInfo !== this.props.showInfo) this.triggerAnimation(this.getInfoData());
+      if(prevProps.showPercentage !== this.props.showPercentage) this.triggerAnimation(this.getPercentageData());
       this.refresh(this.props);
     }
   }
@@ -218,6 +227,7 @@ class QueryMeter extends Component {
   initElementsOfNumbers(arrayOfnumbersToAnimate) {
     // initialize the objects to animate
     arrayOfnumbersToAnimate.forEach(obj => {
+      if(!obj.element) return;
       obj.element.innerHTML = obj.current.toLocaleString();
       obj.next = this.state[obj.state];
       obj.startTime = Date.now();
@@ -229,6 +239,7 @@ class QueryMeter extends Component {
     var progress = Date.now();
     let step = (timestamp) => {
       array.forEach(obj => {
+        if(!obj.element) return;
         // the target has changed
         if (obj.next !== this.state[obj.state]) {
           // the new target is the same as the previous origin
@@ -360,25 +371,25 @@ class QueryMeter extends Component {
     }
 
     render() {
-        return (
+      return (
         <div style={this.state.style.container}>
             <div style={this.state.style.wrapper}>
-            <div style={this.state.style.bottomLayer} />
-            <div
-                style={{
-                ...this.state.style.colorLayer,
-                transform: `rotate(${this.state.degrees}deg)`
-                }}
-            >
-                {this.renderPercentage()}
-            </div>
-            <div style={this.state.style.coverLayer}>{this.renderInfo()}</div>
-                <div>{this.renderSlices()}</div>
-            </div>
-            <div style={this.state.style.bottomCoverLayer} />
+              <div style={this.state.style.bottomLayer}></div>
+              <div
+                  style={{
+                  ...this.state.style.colorLayer,
+                  transform: `rotate(${this.state.degrees}deg)`
+                  }}
+              >
+                  {this.renderPercentage()}
+              </div>
+              <div style={this.state.style.coverLayer}>{this.renderInfo()}</div>
+                  <div>{this.renderSlices()}</div>
+              </div>
+            <div style={this.state.style.bottomCoverLayer}></div>
         </div>
-    );
-  }
+      );
+    }
 }
 
 QueryMeter.defaultProps = {
@@ -388,8 +399,7 @@ QueryMeter.defaultProps = {
   sliceGap: 2,
   duration: 1000,
   transitionTimingFunction: "ease-in-out",
-  coverBackgroundColor: "#fff",
-  containerBackgroundColor: "#fff",
+  backgroundColor: "#fff",
   fillColor:
     "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",
   fillBackgroundColor: "#eee",

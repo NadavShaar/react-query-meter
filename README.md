@@ -28,19 +28,18 @@ npm install --save react-query-meter
     sliceGap={3}
     duration={1000}
     transitionTiming="cubic-bezier(.17,.67,.83,.67)"
-    coverBackgroundColor="#fff"
-    containerBackgroundColor="#fff"
+    backgroundColor="#fff"
     fillColor="linear-gradient(315deg, #fff000 0%, #ed008c 74%)"
     fillBackgroundColor="#eee"
     containerSpacing={20}
     strengthMode={true}
-    percentageStyle={{}}
-    infoNumbersStyle={{}}
-    infoTextStyle={{}}
     showInfo={true}
     showPercentage={true}
     topText="Total Hits:&nbsp;"
     bottomText="Max Hits:&nbsp;"
+    percentageStyle={{}}
+    infoNumbersStyle={{}}
+    infoTextStyle={{}}
 />
 ```
 
