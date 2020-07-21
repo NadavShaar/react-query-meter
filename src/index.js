@@ -13,7 +13,7 @@ class QueryMeter extends Component {
       style: this.getStyles(this.props)
     };
   }
-
+  
   getStyles(props) {
     let styles = {
       container: {
@@ -24,8 +24,8 @@ class QueryMeter extends Component {
         position: "relative",
         background: props.backgroundColor,
         borderRadius: `${props.width * 2}px ${props.width * 2}px 0 0`,
-        minHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${props.width / 2}px`,
-        maxHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${props.width / 2}px`
+        minHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`,
+        maxHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`
       },
       wrapper: {
         width: props.width,
@@ -371,8 +371,10 @@ class QueryMeter extends Component {
     }
 
     render() {
+      let { style } = this.props;
+
       return (
-        <div style={this.state.style.container}>
+        <div style={{...this.state.style.container, ...style}}>
             <div style={this.state.style.wrapper}>
               <div style={this.state.style.bottomLayer}></div>
               <div
@@ -405,6 +407,7 @@ QueryMeter.defaultProps = {
   fillBackgroundColor: "#eee",
   containerSpacing: 20,
   strengthMode: true,
+  style: {},
   percentageStyle: {},
   infoNumbersStyle: {},
   infoTextStyle: {},
