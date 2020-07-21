@@ -2,7 +2,7 @@
 
 A query result visual meter.
 
-[![NPM](https://img.shields.io/npm/v/react-query-meter.svg)](https://www.npmjs.com/package/react-query-meter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-query-meter.svg)](https://www.npmjs.com/package/react-query-meter5) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![query-meter](https://user-images.githubusercontent.com/8030614/87880420-3962ba80-c9fa-11ea-83a0-e7f5c40b994f.png)
 
