@@ -6,7 +6,7 @@ A query result visual meter.
 
 ![query-meter](https://user-images.githubusercontent.com/8030614/87880420-3962ba80-c9fa-11ea-83a0-e7f5c40b994f.png)
 
-Live [here](https://nadavshaar.github.io/react-query-meter/)
+Live Demo [here](https://nadavshaar.github.io/react-query-meter/)
 
 ## Install
 
