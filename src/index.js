@@ -82,7 +82,7 @@ class QueryMeter extends Component {
       },
       seperator: {
         position: "absolute",
-        bottom: 0 - props.sliceGap / 2,
+        bottom: 0,
         left: "-2px",
         width: 2 + props.width / 2,
         height: props.sliceGap,
