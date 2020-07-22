@@ -54,6 +54,7 @@ class App extends Component {
         return (
             <div style={{display: 'block', width: '100%', textAlign: 'center'}}>
                 <div style={{ minWidth: 280, display: 'inline-flex', flexDirection: 'column', textAlign: 'left', padding: 20, borderRadius: 8, boxShadow: 'rgb(0 0 0 / 0.3) 1px 2px 3px 3px', backgroundColor: '#8d5185', backgroundImage: 'linear-gradient(315deg, #493f61 0%, #7892d8 74%)' }}>
+                    <span className="title">react-query-meter</span>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <QueryMeter
                             totalHits={totalHits}

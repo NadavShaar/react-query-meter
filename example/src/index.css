@@ -10,9 +10,7 @@ html, body {
 body {
   margin: 0;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e79087;
@@ -41,4 +39,12 @@ input {
 
 label {
   color:#fff;
+}
+
+.title {
+  font-size: 28px;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 15px;
+  color: #FFEB3B;
 }
