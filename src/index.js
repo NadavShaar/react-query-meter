@@ -18,14 +18,14 @@ class QueryMeter extends Component {
     let styles = {
       container: {
         overflow: "hidden",
-        padding: props.containerSpacing || 0,
+        padding: props.showPercentage ? props.containerSpacing : 0,
         display: "inline-flex",
         flexDirection: "column",
         position: "relative",
         background: props.backgroundColor,
         borderRadius: `${props.width * 2}px ${props.width * 2}px 0 0`,
-        minHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`,
-        maxHeight: !props.showPercentage ? `${props.width / 2 - props.containerSpacing}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`
+        minHeight: !props.showPercentage ? `${props.width / 2}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`,
+        maxHeight: !props.showPercentage ? `${props.width / 2}px` : `${(props.width / 2) + (props.containerSpacing * 2)}px`
       },
       wrapper: {
         width: props.width,
