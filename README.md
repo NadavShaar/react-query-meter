@@ -23,7 +23,7 @@ npm install --save react-query-meter
     width={200}
     thickness={25}
     slices={6}
-    sliceGap={3}
+    sliceGap={2}
     duration={1000}
     transitionTiming="cubic-bezier(.17,.67,.83,.67)"
     backgroundColor="#fff"
@@ -40,6 +40,23 @@ npm install --save react-query-meter
     infoTextStyle={{}}
 />
 ```
+
+## Props
+
+| name | type | description | default value |
+|---|---|---|---|
+| totalHits | number | number of results | 0 |
+| maxHits | number | the maximum number of possible results | 0 |
+| width | number | the width of the meter (in pixels) | 200 |
+| thickness | number | the thickness of the meter (in pixels) | 25 |
+| slices | number | the number of meter slices | 6 |
+| sliceGap | number | the spacing between slices (in pixels) | 2 |
+| duration | number | the duration of the animation (in milliseconds) | 1000 |
+| transitionTiming | string | the the timing function for the animation [details](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) | "cubic-bezier(.17,.67,.83,.67)" |
+| backgroundColor | string | the background color for the meter's container | "#fff" |
+| fillColor | string | the color of the meter | "linear-gradient(315deg, #fff000 0%, #ed008c 74%)" |
+| fillBackgroundColor | string | the background color of the meter | "#eee" |
+| containerSpacing | number | the space (in pixels) between the container and the meter, this prop is allowed only when `showPercentage` is true, otherwise it is equal to 0 | 20 |
 
 ## License
 
