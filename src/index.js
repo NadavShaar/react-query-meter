@@ -400,10 +400,9 @@ QueryMeter.defaultProps = {
   slices: 6,
   sliceGap: 2,
   duration: 1000,
-  transitionTimingFunction: "ease-in-out",
+  transitionTiming: "cubic-bezier(.17,.67,.83,.67)",
   backgroundColor: "#fff",
-  fillColor:
-    "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",
+  fillColor: "linear-gradient(315deg, #fff000 0%, #ed008c 74%)",
   fillBackgroundColor: "#eee",
   containerSpacing: 20,
   strengthMode: true,
@@ -415,9 +414,8 @@ QueryMeter.defaultProps = {
   showPercentage: true,
   topText: "Total Hits: ",
   bottomText: "Max Hits: ",
-  firstAnimationDelay: 0,
-  totalHits: 400,
-  maxHits: 1000
+  totalHits: 0,
+  maxHits: 0
 };
 
 export default QueryMeter;
