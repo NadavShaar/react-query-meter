@@ -57,6 +57,11 @@ npm install --save react-query-meter
 | fillColor | string | the color of the meter | "linear-gradient(315deg, #fff000 0%, #ed008c 74%)" |
 | fillBackgroundColor | string | the background color of the meter | "#eee" |
 | containerSpacing | number | the space (in pixels) between the container and the meter, this prop is allowed only when `showPercentage` is true, otherwise it is equal to 0 | 20 |
+| strengthMode | boolean | whether fewer results will be displayed as a stronger search query or not | true |
+| showInfo | boolean | whether to display the `maxHits` and `totalHits` information in the center of the meter or not | true |
+| showPercentage | boolean | whether to display the percentage calculation in the outer part of the meter or not | true |
+| topText | string | the label for the total hits information | "Total Hits: " |
+| bottomText | string | the label for the max hits information | "Max Hits: " |
 
 ## License
 
