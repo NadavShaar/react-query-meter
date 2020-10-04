@@ -65,4 +65,4 @@ npm install --save react-query-meter
 
 ## License
 
- © [NadavShaar](https://github.com/NadavShaar)
+ © [MIT](https://github.com/NadavShaar/react-query-meter/blob/master/LICENSE)
