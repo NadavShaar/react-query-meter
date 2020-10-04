@@ -1,6 +1,6 @@
 # react-query-meter
 
-A query result visual meter.
+> A query result visual meter.
 
 [![NPM](https://img.shields.io/npm/v/react-query-meter.svg)](https://www.npmjs.com/package/react-query-meter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
