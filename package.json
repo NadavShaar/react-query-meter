@@ -11,6 +11,13 @@
   "engines": {
     "node": ">=10"
   },
+  "keywords": [
+    "react",
+    "query",
+    "meter",
+    "request",
+    "data"
+  ],
   "homepage": "https://nadavshaar.github.io/react-query-meter/",
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
