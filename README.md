@@ -62,6 +62,9 @@ npm install --save react-query-meter
 | showPercentage | boolean | whether to display the percentage calculation in the outer part of the meter or not | true |
 | topText | string | the label for the total hits information | "Total Hits: " |
 | bottomText | string | the label for the max hits information | "Max Hits: " |
+| percentageStyle | object | styles for the percentage number in the outer ring | --- |
+| infoNumbersStyle | object | styles for the number of the max and total hits in the inner ring | --- |
+| infoTextStyle | object | styles for the `topText` and `bottomText` props | --- |
 
 ## License
 
