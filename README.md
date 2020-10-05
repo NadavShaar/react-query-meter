@@ -4,9 +4,9 @@
 
 [![NPM](https://img.shields.io/npm/v/react-query-meter.svg)](https://www.npmjs.com/package/react-query-meter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-![meter](https://user-images.githubusercontent.com/8030614/95019737-ca4b4880-066f-11eb-8513-6e8d4e1972d5.gif)
+**Live [Demo](https://nadavshaar.github.io/react-query-meter/)**
 
-Live Demo [here](https://nadavshaar.github.io/react-query-meter/)
+![meter](https://user-images.githubusercontent.com/8030614/95019737-ca4b4880-066f-11eb-8513-6e8d4e1972d5.gif)
 
 ## Install
 
